@@ -1,0 +1,28 @@
+﻿@model Trip
+@{
+	string title = ViewBag.Action; ViewData["Title"] = title;
+}
+<form asp-action="Page" method="post" class="align-content-start">
+	<div asp-validation-summary="All" class="text-danger"></div>
+	<div class="mb-3">
+	<input type="hidden" asp-for="TripId" />
+	</div>
+	<div class="mb-3">
+		<label asp-for="Destination" class="form-label">Destination <br /></label>
+		<input asp-for="Destination" class="form-control">
+	</div>
+	<div class="mb-3">
+		<label asp-for="Accommodation" class="form-label">Accommodations <br /></label>
+		<input asp-for="Accommodation" class="form-control">
+	</div>
+	<div class="mb-3">
+		<label asp-for="StartDate" class="form-label">Start Date <br /></label>
+		<input asp-for="StartDate" class="form-control">
+	</div>
+	<div class="mb-3">
+		<label asp-for="EndDate" class="form-label">End Date <br /></label>
+		<input asp-for="EndDate" class="form-control">
+	</div>
+	<button type="submit" asp-route-id="2" class="btn btn-dark text-white">Next</button> 
+	<a asp-controller="Home" asp-action="Cancel" class="btn border rounded btn-white">Cancel</a>
+</form>
